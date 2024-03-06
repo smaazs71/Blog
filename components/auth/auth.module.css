@@ -1,0 +1,5 @@
+/* account CSS */
+
+.accountProfilePicture {
+  @apply rounded-full scale-90;
+}

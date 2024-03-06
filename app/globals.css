@@ -3,27 +3,61 @@
 @tailwind utilities;
 
 :root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --foreground: #000;
+  --background: #fff;
+  --softBg: "#f0f0f0";
+  --softTextColor: "#626262";
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --foreground: #ddd;
+    --background: #0f172a;
+    --softBg: #1f273a;
+    --softtextcolor: #a6a6a6;
   }
+}
+.light {
+  --foreground: #000;
+  --background: #fff;
+  --softBg: "#f0f0f0";
+  --softTextColor: "#626262";
+}
+
+.dark {
+  --foreground: #ddd;
+  --background: #0f172a;
+  --softBg: #1f273a;
+  --softtextcolor: #a6a6a6;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.page {
+  color: var(--foreground);
+  background-color: var(--background);
+  transition: all;
+  transition-duration: 500ms;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+li {
+  list-style-type: none;
+}
+
+.wrapper {
 }
 
 @layer utilities {
@@ -31,3 +65,81 @@ body {
     text-wrap: balance;
   }
 }
+
+@layer base {
+  h1 {
+    @apply text-4xl;
+    @apply font-bold;
+  }
+  h2 {
+    @apply text-3xl;
+    @apply font-bold;
+  }
+  h3 {
+    @apply text-2xl;
+    @apply font-bold;
+  }
+  h4 {
+    @apply text-xl;
+    @apply font-semibold;
+  }
+  h5 {
+    @apply text-lg; /*or text-lg */
+    @apply font-semibold;
+  }
+  h6 {
+    @apply text-sm;
+    @apply font-semibold;
+  }
+}
+
+.container {
+  @apply mx-auto;
+}
+
+section {
+  @apply container max-w-4xl;
+}
+
+/* Footer CSS Start */
+
+.footer {
+  @apply flex justify-between items-center border-t bottom-0 p-7 md:flex-row  flex-col-reverse;
+}
+
+.footerRights {
+  @apply flex md:flex-col md:justify-start items-start gap-3 mt-5 p-5 border-t md:border-0 flex-row justify-between;
+}
+
+.rightsText {
+  @apply text-pretty text-sm text-gray-700;
+}
+
+.footerLinks {
+  @apply flex justify-between items-start gap-20 space-x-11;
+}
+
+.links {
+  @apply flex flex-col items-center justify-start;
+}
+
+.social {
+  @apply flex flex-col items-center justify-start;
+}
+
+.footerLinksSection {
+  @apply flex flex-col gap-3;
+}
+.footerLinksTitle {
+  @apply text-lg font-semibold text-center;
+}
+
+.footerLink {
+  @apply flex gap-3 opacity-85 hover:opacity-100;
+}
+
+.footerLinkText {
+  @apply text-gray-800 hover:text-black text-sm;
+}
+
+/* Footer CSS End */

@@ -1,0 +1,1 @@
+export type { postTypes } from "./postTypes";

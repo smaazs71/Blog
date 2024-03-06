@@ -1,0 +1,48 @@
+.container {
+  flex: 2;
+  margin-top: 60px;
+}
+
+.subTitle {
+  color: gray;
+  @apply text-base font-normal;
+}
+
+.title {
+  @apply text-3xl;
+}
+.items {
+  margin-top: 35px;
+  margin-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 35px;
+}
+
+.categoryList {
+  margin-top: 25px;
+  margin-bottom: 60px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 17px;
+}
+
+.categoryItem {
+  width: 90px;
+  text-align: center;
+  padding: 10px 22px;
+  border-radius: 10px;
+  @apply text-sm;
+}
+
+@media screen and (max-width: 1280px) {
+}
+@media screen and (max-width: 1024px) {
+  .container {
+    display: none;
+  }
+}
+@media screen and (max-width: 768px) {
+}
+@media screen and (max-width: 576px) {
+}

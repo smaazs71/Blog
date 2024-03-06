@@ -1,0 +1,95 @@
+.container {
+  @apply mt-7;
+}
+
+.title {
+  @apply text-7xl font-light;
+}
+.bold {
+}
+
+.post {
+  @apply flex mt-14 items-center gap-12;
+}
+
+.imgContainer {
+  @apply flex-1 relative h-[500px];
+}
+
+.image {
+  /* object-fit: cover; */
+  @apply object-cover;
+}
+.textContainer {
+  @apply flex flex-1 flex-col gap-5;
+}
+.postTitle {
+  @apply text-4xl;
+}
+.postDescription {
+  color: var(--softTextColor);
+  @apply text-xl font-light;
+}
+.button {
+  width: max-content;
+  width: max-content;
+  background-color: var(--foreground);
+  color: var(--background);
+  @apply p-4 border-0 py-2 px-3 rounded;
+}
+
+@media screen and (max-width: 1280px) {
+  .title {
+    /* font-size: 72px; */
+    @apply text-6xl;
+  }
+  .postTitle {
+    @apply text-3xl;
+  }
+  .postDescription {
+    @apply text-lg;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .title {
+    /* font-size: 64px; */
+    @apply text-5xl;
+  }
+  .post {
+    flex-direction: column;
+  }
+  .postTitle {
+    @apply text-3xl;
+  }
+  .postDescription {
+    @apply text-lg;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .title {
+    /* font-size: 48px; */
+    @apply text-4xl;
+  }
+  .postTitle {
+    @apply text-2xl;
+  }
+  .postDescription {
+    @apply text-base;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .title {
+    /* font-size: 36px; */
+    @apply text-3xl;
+  }
+  .postTitle {
+    @apply text-xl;
+  }
+
+  .postDescription {
+    @apply text-sm;
+  }
+}

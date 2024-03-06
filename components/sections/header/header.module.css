@@ -1,0 +1,43 @@
+/* header CSS Start */
+.header {
+  @apply flex items-center justify-between py-3;
+}
+
+/* logo CSS */
+.logo {
+  flex: 1;
+  /* @apply; */
+}
+.logo img {
+  @apply rounded h-11 w-56;
+}
+
+/* Search bar CSS */
+.centerHeader {
+  flex: 1;
+  @apply flex gap-9 items-center justify-center;
+}
+
+.searchInput {
+  @apply border-0 border-b px-5 focus:outline-none;
+}
+
+.searchImgBtn {
+  @apply ml-[-37px];
+}
+
+.auth {
+  flex: 1;
+  @apply flex items-center justify-end gap-3;
+}
+
+@media screen and (max-width: 996px) {
+  .searchInput {
+    @apply w-0 border-0;
+  }
+  .searchForm:focus .searchInput {
+    @apply w-60 border-b;
+  }
+}
+
+/* header CSS End */

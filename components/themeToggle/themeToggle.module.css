@@ -1,0 +1,12 @@
+.container {
+  border-radius: 50px;
+  justify-content: space-between;
+  @apply transition-all duration-500 relative w-[50px] h-[23px] items-center cursor-pointer flex;
+}
+
+.ball {
+  width: 17px;
+  height: 17px;
+  /* left: 2px; */
+  @apply transition-all duration-500 absolute rounded-full;
+}

@@ -1,0 +1,24 @@
+.container {
+  flex: 5;
+}
+
+.title {
+  margin: 50px 0;
+  font-weight: 600;
+  @apply text-3xl;
+}
+
+@media screen and (max-width: 1280px) {
+  .title {
+    @apply text-2xl;
+  }
+}
+@media screen and (max-width: 1024px) {
+}
+@media screen and (max-width: 768px) {
+  .title {
+    @apply text-xl;
+  }
+}
+@media screen and (max-width: 576px) {
+}
