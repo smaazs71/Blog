@@ -10,6 +10,7 @@ import CardList from "./sections/cardList/CardList";
 import Card from "./card/Card";
 import MenuItem from "./sections/menu/menuItem/MenuItem";
 import Pagination from "./sections/pagination/Pagination";
+import Comments from "./sections/comments/Comments";
 
 export {
   Header,
@@ -24,4 +25,5 @@ export {
   Menu,
   MenuItem,
   Pagination,
+  Comments,
 };

@@ -1,0 +1,73 @@
+.container {
+}
+
+.infoContainer {
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.textContainer {
+  flex: 1;
+}
+
+.title {
+  margin-bottom: 50px;
+  @apply text-5xl;
+}
+
+.userDetails {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.userImageContainer {
+  height: 50px;
+  position: relative;
+  width: 50px;
+}
+
+.avator {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.userTextContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  color: var(--softTextColor);
+}
+
+.username {
+  @apply text-lg;
+}
+
+.imageContainer {
+  flex: 1;
+  height: 350px;
+  position: relative;
+}
+
+.image {
+  object-fit: cover;
+}
+
+.content {
+  display: flex;
+  gap: 50px;
+}
+
+.post {
+  flex: 5;
+  margin-top: 60px;
+}
+
+.description {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  @apply text-lg font-light;
+}
