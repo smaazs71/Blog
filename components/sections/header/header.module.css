@@ -9,7 +9,7 @@
   /* @apply; */
 }
 .logo img {
-  @apply rounded h-11 w-56;
+  @apply rounded;
 }
 
 /* Search bar CSS */

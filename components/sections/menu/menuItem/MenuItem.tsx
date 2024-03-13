@@ -11,26 +11,34 @@ interface MenuItemProps {
 
 const MenuItem = ({ post, flag }: MenuItemProps) => {
   return (
-    <Link href={post.href} className={styles.item}>
+    <Link href={`/posts/${post.slug}`} className={styles.item}>
       {flag === "withoutImage" ? (
         ""
       ) : (
-        <div className={styles.imageContainer}>
-          <Image src={post.image} alt="" fill className={styles.image} />
-        </div>
+        <>
+          {post.img && (
+            <div className={styles.imageContainer}>
+              <Image src={post.img} alt="" fill className={styles.image} />
+            </div>
+          )}
+        </>
       )}
       <div className={styles.textContainer}>
         <span
           style={post.customStyles}
-          className={`${styles.category} ${styles[post.category]}`}
+          className={`${styles.category} ${
+            styles[post.cat?.title || post.catSlug]
+          }`}
         >
-          {post.category}
+          {post.cat?.title}
         </span>
         <h3 className={styles.postTitle}>{post.title}</h3>
         <div className={styles.details}>
-          <span className={styles.author}>{post.author}</span>
+          <span className={styles.author}>{post.user?.name}</span>
           <span> - </span>
-          <span className={styles.date}>{post.date}</span>
+          <span className={styles.date}>
+            {post.createdAt.toString().substring(0, 10)}
+          </span>
         </div>
       </div>
     </Link>

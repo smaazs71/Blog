@@ -3,3 +3,7 @@
 .accountProfilePicture {
   @apply rounded-full scale-90;
 }
+
+.login {
+  cursor: pointer;
+}

@@ -1,6 +1,7 @@
 .container {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 60px;
 }
 
 .button {
@@ -10,4 +11,9 @@
   background-color: crimson;
   color: white;
   cursor: pointer;
+}
+
+.button:disabled {
+  background-color: rgba(220, 20, 60, 0.473);
+  cursor: not-allowed;
 }

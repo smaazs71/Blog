@@ -35,6 +35,25 @@
   @apply text-sm;
 }
 
+.categoryItem.style {
+  background-color: #5734ff31;
+}
+.categoryItem.fashion {
+  background-color: #da85c731;
+}
+.categoryItem.food {
+  background-color: #7fb88133;
+}
+.categoryItem.travel {
+  background-color: #ff795736;
+}
+.categoryItem.culture {
+  background-color: #ffb04f45;
+}
+.categoryItem.coding {
+  background-color: #5e4fff31;
+}
+
 @media screen and (max-width: 1280px) {
 }
 @media screen and (max-width: 1024px) {

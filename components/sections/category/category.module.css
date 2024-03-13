@@ -18,6 +18,21 @@
 .style {
   background-color: #5734ff31;
 }
+.fashion {
+  background-color: #da85c731;
+}
+.food {
+  background-color: #7fb88133;
+}
+.travel {
+  background-color: #ff795736;
+}
+.culture {
+  background-color: #ffb04f45;
+}
+.coding {
+  background-color: #5e4fff31;
+}
 .image {
   @apply h-9 w-9 rounded-[50%];
 }

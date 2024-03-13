@@ -8,9 +8,12 @@ const ThemeToggle = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
 
   return (
-    <div className={`${styles.container} ${
-      theme === "light" ? "bg-black" : "bg-white"
-    } `} onClick={toggleTheme}>
+    <div
+      className={`${styles.container} ${
+        theme === "light" ? "bg-black" : "bg-white"
+      } `}
+      onClick={toggleTheme}
+    >
       <Image src={"/button-icons/moon.png"} alt="moon" width={17} height={17} />
       <div
         className={`${styles.ball} ${

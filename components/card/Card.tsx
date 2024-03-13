@@ -2,36 +2,37 @@ import React from "react";
 import styles from "./card.module.css";
 import Image from "next/image";
 import Link from "next/link";
+import { postTypes } from "@/types";
 
-const Card = () => {
+interface CardProps {
+  post: postTypes;
+}
+const Card = ({ post }: CardProps) => {
   return (
     <div className={styles.container}>
-      <div className={styles.imageContainer}>
-        <Image
-          src={"/display-icons/categories/p1.jpeg"}
-          alt="card image"
-          fill
-          className={styles.image}
-        />
-      </div>
+      {post.img && (
+        <div className={styles.imageContainer}>
+          <Image
+            src={post.img}
+            alt="card image"
+            fill
+            className={styles.image}
+          />
+        </div>
+      )}
       <div className={styles.textContainer}>
         <div className={styles.details}>
-          <span className={styles.date}>11.02.2023</span>
+          <span className={styles.date}>
+            {post.createdAt.toString().substring(0, 10)}
+          </span>
           <span> - </span>
-          <span className={styles.category}>CULtUrE</span>
+          <span className={styles.category}>{post.catSlug}</span>
         </div>
-        <Link href={"/"}>
-          <h1 className={styles.title}>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-          </h1>
+        <Link href={`/posts/${post.slug}`}>
+          <h1 className={styles.title}>{post.title}</h1>
         </Link>
-        <p className={styles.description}>
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nulla
-          mollitia a eum sit, asperiores perferendis maiores quisquam
-          repellendus consectetur aspernatur adipisci dolores, ratione odit
-          nihil modi facilis voluptates itaque id!
-        </p>
-        <Link href={"/"} className={styles.link}>
+        <p className={styles.description}>{post.desc.substring(0,60)}</p>
+        <Link href={`/posts/${post.slug}`} className={styles.link}>
           Read More
         </Link>
       </div>

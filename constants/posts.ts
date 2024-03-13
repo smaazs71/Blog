@@ -1,3 +1,4 @@
+export const POSTS_PER_PAGE = 3
 export const posts = [
   {
     title: "Lorem ipsum dolor, sit amet consectetur adipisicing elit.",

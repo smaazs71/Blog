@@ -30,8 +30,28 @@
   @apply text-xs;
 }
 
+.category {
+  background-color: gray;
+}
+
 .category.travel {
+  background-color: #775aec;
+}
+.category.style {
   background-color: #ff7857;
+}
+
+.category.fashion {
+  background-color: #ffb14f;
+}
+.category.food {
+  background-color: #7fb881;
+}
+.category.culture {
+  background-color: #ff7887;
+}
+.category.coding {
+  background-color: #4fff31;
 }
 
 .postTitle {

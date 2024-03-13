@@ -1,31 +1,32 @@
 import { footerLinks } from "@/constants";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import styles from "./footer.module.css";
 
 const Footer = () => {
   return (
-    <div className="footer">
-      <div className="footerRights">
+    <div className={styles.footer}>
+      <div className={styles.footerRights}>
         <Image
           src={"/logo/Uchiha-Mugiwara-logos-black.png"}
           alt="logo"
-          width={131}
-          height={43}
+          width={224}
+          height={44}
+          priority={false}
         />
-        <p className="rightsText">
+        <p className={styles.rightsText}>
           M. Maaz Shaikh @2024
           <br />
           All rights reserved ©
         </p>
       </div>
-      <div className="footerLinks">
+      <div className={styles.footerLinks}>
         {footerLinks.map((section) => (
-          <div className="footerLinksSection">
-            <div className="footerLinksTitle">{section.title}</div>
+          <div className={styles.footerLinksSection}>
+            <div className={styles.footerLinksTitle}>{section.title}</div>
             {section.links.map((link) => (
-              <Link href={link.url} className="footerLink">
-                <span className="footerLinkImg">
+              <Link href={link.url} className={styles.footerLink}>
+                <span className={styles.footerLinkImg}>
                   {link.image_path && link.image_path !== "" && (
                     <Image
                       src={link.image_path}
@@ -35,7 +36,7 @@ const Footer = () => {
                     />
                   )}
                 </span>
-                <span className="footerLinkText">{link.title}</span>
+                <span className={styles.footerLinkText}>{link.title}</span>
               </Link>
             ))}
           </div>

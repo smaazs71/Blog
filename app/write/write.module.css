@@ -1,0 +1,99 @@
+.loading {
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+}
+
+.input {
+  padding: 50px;
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: var(--foreground);
+  @apply text-6xl;
+}
+
+.input::placeholder {
+  color: #b3b3b1;
+}
+
+.editor {
+  display: flex;
+  gap: 20px;
+  height: 700px;
+  position: relative;
+}
+
+.inputFiles {
+  position: relative;
+}
+
+.button,
+.addButton {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: transparent;
+  border: 1px solid var(--foreground);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.addButton {
+  border-color: #1a8917;
+}
+
+.h0 {
+  opacity: 0;
+  visibility: hidden;
+  display: none;
+  top: 0;
+}
+.h100 {
+  display: block;
+  visibility: visible;
+  top: 60px;
+  opacity: 1;
+}
+
+.add {
+  /* top: 5%; */
+  left: 0px;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background-color: var(--background);
+  position: absolute;
+  z-index: 999;
+  width: 100%;
+  /* left: 50px; */
+  transition: all 500ms ease 0s;
+
+  /* transition-property: top;
+  transition-duration: 500ms; */
+}
+.textArea {
+  border: 1px solid var(--foreground);
+  border-radius: 10px;
+  width: 100%;
+}
+
+.publish {
+  position: absolute;
+  top: 80px;
+  right: 40px;
+  padding: 10px 20px;
+  border: none;
+  background-color: #1a8917;
+  color: white;
+  cursor: pointer;
+  border-radius: 20px;
+}

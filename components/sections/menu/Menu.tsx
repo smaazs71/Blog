@@ -3,9 +3,14 @@ import styles from "./menu.module.css";
 import Link from "next/link";
 import Image from "next/image";
 import MenuItem from "./menuItem/MenuItem";
-import { categories, posts } from "@/constants";
+import { getPosts } from "@/services/posts";
+import { getCategories } from "@/services/categories";
 
-const Menu = () => {
+const Menu = async () => {
+  const recent = await getPosts(1, 5, undefined, "desc");
+  const popular = await getPosts(1, 5, undefined, undefined, "desc");
+  const categories = await getCategories();
+
   return (
     <div className={styles.container}>
       <div>
@@ -13,7 +18,7 @@ const Menu = () => {
 
         <h1 className={styles.title}>Most Popular</h1>
         <div className={styles.items}>
-          {posts.map((post) => (
+          {recent.posts.map((post) => (
             <MenuItem post={post} flag={"withoutImage"} />
           ))}
         </div>
@@ -24,9 +29,9 @@ const Menu = () => {
         <div className={styles.categoryList}>
           {categories.map((category) => (
             <Link
-              href={category.href}
+              href={`/blog?category=${category.slug}`}
               className={`${styles.categoryItem} ${styles[category.title]}`}
-              style={category.customStyles}
+              // style={category.customStyles}
             >
               {category.title}
             </Link>
@@ -37,7 +42,7 @@ const Menu = () => {
         <h2 className={styles.subTitle}>Chosen by the editor</h2>
         <h1 className={styles.title}>Editors Pick</h1>
         <div className={styles.items}>
-          {posts.map((post) => (
+          {popular.posts.map((post) => (
             <MenuItem post={post} />
           ))}
         </div>

@@ -101,45 +101,10 @@ section {
   @apply container max-w-4xl;
 }
 
-/* Footer CSS Start */
-
-.footer {
-  @apply flex justify-between items-center border-t bottom-0 p-7 md:flex-row  flex-col-reverse;
+/* Quill CSS Start */
+.ql-container {
+  @apply !text-2xl;
 }
-
-.footerRights {
-  @apply flex md:flex-col md:justify-start items-start gap-3 mt-5 p-5 border-t md:border-0 flex-row justify-between;
+.quill > .ql-container > .ql-editor.ql-blank::before {
+  color: #b3b3b1;
 }
-
-.rightsText {
-  @apply text-pretty text-sm text-gray-700;
-}
-
-.footerLinks {
-  @apply flex justify-between items-start gap-20 space-x-11;
-}
-
-.links {
-  @apply flex flex-col items-center justify-start;
-}
-
-.social {
-  @apply flex flex-col items-center justify-start;
-}
-
-.footerLinksSection {
-  @apply flex flex-col gap-3;
-}
-.footerLinksTitle {
-  @apply text-lg font-semibold text-center;
-}
-
-.footerLink {
-  @apply flex gap-3 opacity-85 hover:opacity-100;
-}
-
-.footerLinkText {
-  @apply text-gray-800 hover:text-black text-sm;
-}
-
-/* Footer CSS End */

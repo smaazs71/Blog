@@ -25,12 +25,12 @@
   cursor: pointer;
 }
 
-.comments{
-   margin-top: 50px;
+.comments {
+  margin-top: 50px;
 }
 
-.comment{
-   margin-bottom: 50px;
+.comment {
+  margin-bottom: 50px;
 }
 
 .userDetails {
@@ -58,6 +58,10 @@
   color: var(--softTextColor);
 }
 
-.username {
-  @apply text-lg;
+.userTextContainer {
+  @apply text-base;
+}
+
+.commentText {
+  @apply text-base;
 }

@@ -2,28 +2,33 @@ import React from "react";
 import styles from "./category.module.css";
 import Link from "next/link";
 import Image from "next/image";
-import { categories } from "@/constants";
+import { getCategories } from "@/services/categories";
 
-const Category = () => {
+
+const Category = async () => {
+  const data = await getCategories();
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Popular Categories</h1>
       <div className={styles.categories}>
-        {categories.map((category) => (
+        {data?.map((category) => (
           <Link
-            href={category.href}
+            key={category._id}
+            href={`/blog?category=${category.slug}`}
             className={` ${styles.category} 
             ${styles[category.title]} 
             `}
-            style={category.customStyles}
+            // style={category.customStyles}
           >
-            <Image
-              src={category.image}
-              alt=""
-              width={32}
-              height={32}
-              className={styles.image}
-            />
+            {category.img && (
+              <Image
+                src={category.img}
+                alt=""
+                width={32}
+                height={32}
+                className={styles.image}
+              />
+            )}
             {category.title}
           </Link>
         ))}
