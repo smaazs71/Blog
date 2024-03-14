@@ -1,7 +1,7 @@
 "use client";
 import Image from "next/image";
 import styles from "./write.module.css";
-import { useEffect, useState } from "react";
+import { ComponentType, useEffect, useMemo, useState } from "react";
 import "react-quill/dist/quill.bubble.css";
 import { useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
@@ -15,12 +15,18 @@ import { firebaseApp } from "@/utils";
 import { postTypes } from "@/types";
 import dynamic from "next/dynamic";
 import { DOMAIN_NAME, POSTS_API } from "@/constants/apiEndPoints";
+import Module from "module";
+import { ReactQuillProps } from "react-quill";
 // import dynamic from "next/dynamic";
 
 const storage = getStorage(firebaseApp);
 
 const WritePage = () => {
-  const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
+  const ReactQuill: ComponentType<ReactQuillProps> = useMemo(
+    () => dynamic(() => import("react-quill"), { ssr: false }),
+    []
+  );
+  // const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
 
   const [file, setFile] = useState<null | File>();
   const [open, setOpen] = useState(false);
