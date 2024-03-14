@@ -7,7 +7,7 @@ import useSWR from "swr";
 import { commentTypes } from "@/types";
 import { useState } from "react";
 import { json } from "stream/consumers";
-import { DOMAIN_NAME } from "@/constants/apiEndPoints";
+import { COMMENTS_API, DOMAIN_NAME } from "@/constants/apiEndPoints";
 
 const fetcher = async (url: any): Promise<commentTypes[]> => {
   const res = await fetch(url);
@@ -24,7 +24,7 @@ const Comments = ({ postSlug }: { postSlug: string }) => {
   const { status } = useSession();
 
   const { data, mutate, isLoading } = useSWR(
-    `${DOMAIN_NAME}/api/comments?postSlug=${postSlug}`,
+    `${DOMAIN_NAME}${COMMENTS_API}?postSlug=${postSlug}`,
     fetcher
   );
 
