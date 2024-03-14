@@ -3,9 +3,10 @@ import styles from "./singlePage.module.css";
 import Image from "next/image";
 import { Comments, Menu } from "@/components";
 import { postTypes } from "@/types";
+import { DOMAIN_NAME } from "@/constants/apiEndPoints";
 
 const getData = async (slug: string): Promise<postTypes> => {
-  const res = await fetch(`http://localhost:3000/api/posts/${slug}`, {
+  const res = await fetch(`${DOMAIN_NAME}/api/posts/${slug}`, {
     cache: "no-store",
   });
   if (!res.ok) {

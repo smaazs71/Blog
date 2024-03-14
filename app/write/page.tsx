@@ -14,6 +14,7 @@ import {
 import { firebaseApp } from "@/utils";
 import { postTypes } from "@/types";
 import dynamic from "next/dynamic";
+import { DOMAIN_NAME } from "@/constants/apiEndPoints";
 // import dynamic from "next/dynamic";
 
 const storage = getStorage(firebaseApp);
@@ -40,7 +41,7 @@ const WritePage = () => {
       .replace(/^-+|-+$/g, "");
 
   const handleSubmit = async () => {
-    const res = await fetch("/api/posts", {
+    const res = await fetch(`${DOMAIN_NAME}/api/posts`, {
       method: "POST",
       body: JSON.stringify({
         title,

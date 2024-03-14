@@ -1,3 +1,4 @@
+import { DOMAIN_NAME } from "@/constants/apiEndPoints";
 import { postTypes } from "@/types";
 
 export const getPosts = async (
@@ -8,7 +9,7 @@ export const getPosts = async (
   popular?: string
 ): Promise<{ count: number; posts: postTypes[] }> => {
   const res = await fetch(
-    `http://localhost:3000/api/posts?page=${page}&postsPerPage=${
+    `${DOMAIN_NAME}/api/posts?page=${page}&postsPerPage=${
       postsPerPage || ""
     }&category=${category || ""}&sort=${sort || ""}&popular=${popular || ""}`,
     {

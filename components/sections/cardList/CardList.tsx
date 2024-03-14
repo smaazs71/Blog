@@ -4,13 +4,14 @@ import { Card, Pagination } from "@/components";
 import { postTypes } from "@/types";
 import { POSTS_PER_PAGE } from "@/constants/posts";
 import { getPosts } from "@/services/posts";
+import { DOMAIN_NAME } from "@/constants/apiEndPoints";
 
 const getData = async (
   page: number,
   category?: string
 ): Promise<{ count: number; posts: postTypes[] }> => {
   const res = await fetch(
-    `http://localhost:3000/api/posts?page=${page}&sortRecent=desc&category=${
+    `${DOMAIN_NAME}/api/posts?page=${page}&sortRecent=desc&category=${
       category || ""
     }`,
     {
